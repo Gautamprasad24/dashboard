@@ -83,23 +83,56 @@ b{
 /* ASIDE  */
 aside
 {
+    position: absolute;
     height:100vh;
+    width:200px;
+    display: none;
+   top:40px;
 }
+
 
 aside .top
 {
     background-color: var(--clr-white);
-    display:flex;
+    
     justify-content: space-around;
     align-items: center;
     margin-top: 1.4rem;
+  
+       
 }
+
+
+
 aside .logo
 {
     display: flex;
     gap:1rem;
 }
 
+ #menu_bar
+{
+    position: relative;
+    display: inline;
+    top:30px;
+    left:100px;
+    height:25px;
+    width:25px;
+    left:-100px;
+    animation: menuAni 1s forwards;
+    }
+    @keyframes menuAni {
+        to{
+            left:0;
+        }
+       
+}
+#close_btn
+{
+    position: relative;
+    left:150px;
+    top:-25px;
+}
 /* variables */
 
 
@@ -155,10 +188,19 @@ aside .sidebar
 {
     background-color: var(--clr-white);
     display: flex;
+    /* display:none; */
     flex-direction: column;
     height:85vh;
     position: relative;
     top: 1rem;
+    left:-100px;
+    animation: menuAni 3s forwards;
+    }
+    @keyframes menuAni {
+        to{
+            left:0;
+        }
+       
 }
 aside .h3
 {
@@ -218,9 +260,11 @@ aside .sidebar a span.msg_count
 /* *********************************************START WITH THE MAIN SECTION TO STYLE************************************ */
 
 main{
+    position:fixed;
     margin-top:1.4rem;
     width:auto;
 width:850px;
+left:250px;
 }
 main input{
     background-color: transparent;
@@ -389,20 +433,22 @@ main .recent_order a{
 
 .right
 {
-    position: relative;
+    position: fixed;
     margin-top: 1.4rem;
-    right:80px;
+    right:16px;
 }
 .right h2{
     color:var(--clr-dark);
 }
 .right .top{
-    display: flex;
+    position: relative;
+    display: inline;
     justify-content: start;
     gap:2rem;
+    left:50px;
 }
 .right  .top button{
-    /* display: none; */
+    display: none;
 }
 .right .theme-toogler
 {
@@ -551,10 +597,10 @@ width:80%;
 }
 aside{
     position:fixed;
-    width:10rem;
+    width:18rem;
     z-index:3;
     background:var(--clr-white);
-display: none;
+display: none; 
 }
 aside .logo h2{
     display: inline;
@@ -567,6 +613,9 @@ aside .sidebar a{
     height:3.4rem;
 
 }
+
+
+
 aside .top div.close span{
     display: inline;
     position: absolute;
